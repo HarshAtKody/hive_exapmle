@@ -76,7 +76,7 @@ class _TransactionDialogState extends State<TransactionDialog> {
           hintText: 'Enter Name',
         ),
         validator: (name) =>
-            name != null && name.isEmpty ? 'Enter a name' : null,
+            (name != null && name.isEmpty) ? 'Enter a name' : null,
       );
 
   Widget buildAmount() => TextFormField(
@@ -85,7 +85,7 @@ class _TransactionDialogState extends State<TransactionDialog> {
           hintText: 'Enter Amount',
         ),
         keyboardType: TextInputType.number,
-        validator: (amount) => amount != null && double.tryParse(amount) == null
+        validator: (amount) => (amount != null && double.tryParse(amount) == null)
             ? 'Enter a valid number'
             : null,
         controller: amountController,
