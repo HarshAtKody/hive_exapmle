@@ -91,10 +91,7 @@ class _TransactionPageState extends State<TransactionPage> {
     }
   }
 
-  Widget buildTransaction(
-    BuildContext context,
-    Transaction transaction,
-  ) {
+  Widget buildTransaction(BuildContext context, Transaction transaction,) {
     final color = transaction.isExpense ? Colors.red : Colors.green;
     final date = DateFormat.yMMMd().format(transaction.createdDate);
     final amount = '\$' + transaction.amount.toStringAsFixed(2);
